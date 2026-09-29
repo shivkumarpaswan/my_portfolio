@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Shiv Kumar — Software Engineer and Full Stack Developer Portfolio">
+    <meta name="keywords"
+        content="Shiv Kumar, Software Engineer, Full Stack Developer, MERN Developer, React, Node.js, MongoDB">
+    <meta name="author" content="Shiv Kumar">
+
+    <title>Shiv Kumar | Software Engineer & Full Stack Developer</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Vanilla Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <canvas id="webgl-canvas"></canvas>
+    <div class="background-grid"></div>
+
+    <div class="blue-orb orb-one"></div>
+    <div class="blue-orb orb-two"></div>
+
+    <!-- Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="site-header fixed top-0 left-0 w-full z-50 border-b border-blue-500/10 bg-[#050816]/75 backdrop-blur-xl">
+
+        <div class="navbar-inner max-w-7xl mx-auto px-5 lg:px-10 h-20 flex items-center justify-between">
+
+            <a href="#home" class="navbar-brand heading font-bold text-xl sm:text-2xl tracking-tight electric">
+                SHIV KUMAR
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-7 text-sm text-slate-300">
+
+                <a href="#about" class="nav-link hover:text-blue-400 transition">About</a>
+                <a href="#skills" class="nav-link hover:text-blue-400 transition">Skills</a>
+                <a href="#experience" class="nav-link hover:text-blue-400 transition">Experience</a>
+                <a href="#projects" class="nav-link hover:text-blue-400 transition">Projects</a>
+                <a href="#education" class="nav-link hover:text-blue-400 transition">Education</a>
+                <a href="#contact" class="nav-link hover:text-blue-400 transition">Contact</a>
+
+            </nav>
+
+            <div class="navbar-actions flex items-center gap-3">
+
+                <a href="resume.pdf" download
+                    class="hidden sm:flex btn-primary px-5 py-2.5 rounded-full text-xs font-bold">
+                    <i class="fa-solid fa-download mr-2"></i>
+                    Resume
+                </a>
+
+                <button id="mobileMenuBtn" type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                    class="mobile-menu-btn lg:hidden glass rounded-xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Mobile Menu -->
+
+        <div id="mobileMenu" class="hidden lg:hidden px-4 pb-4">
+            <div class="mobile-nav-scroll glass rounded-2xl px-3 py-3">
+                <div class="mobile-nav-items">
+                    <a href="#about" class="mobile-nav-link">About</a>
+                    <a href="#skills" class="mobile-nav-link">Skills</a>
+                    <a href="#experience" class="mobile-nav-link">Experience</a>
+                    <a href="#projects" class="mobile-nav-link">Projects</a>
+                    <a href="#education" class="mobile-nav-link">Education</a>
+                    <a href="#contact" class="mobile-nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section id="home" class="min-h-screen flex items-center px-5 pt-24 sm:pt-28 pb-16 sm:pb-20">
+
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-14 items-center">
+
+            <!-- Left -->
+
+            <div class="lg:col-span-7 reveal">
+
+                <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-7 text-xs text-blue-300">
+
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+
+                    Available for Opportunities
+
+                </div>
+
+                <p class="text-blue-400 text-sm font-mono mb-4">
+                    Hello, I'm
+                </p>
+
+                <h1 class="hero-title heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+
+                    Shiv <span class="electric">Kumar</span>
+
+                </h1>
+
+                <div class="typing-wrap mt-5 text-xl sm:text-2xl text-slate-300">
+
+                    <span id="typingText"></span>
+                    <span class="text-blue-500">|</span>
+
+                </div>
+
+                <p class="mt-7 max-w-2xl text-slate-400 leading-8 text-sm sm:text-base">
+
+                    B.Tech Computer Science student focused on building
+                    modern, scalable and user-friendly web applications
+                    using the <span class="text-white">MERN Stack</span>.
+
+                    I enjoy turning ideas into functional digital products
+                    with clean interfaces and reliable backend systems.
+
+                </p>
+
+                <!-- Buttons -->
+
+                <div class="flex flex-wrap gap-4 mt-8">
+
+                    <a href="#projects" class="btn-primary px-6 py-3.5 rounded-xl font-semibold text-sm">
+                        <i class="fa-solid fa-rocket mr-2"></i>
+                        Explore Projects
+                    </a>
+
+                    <a href="resume.pdf" download
+                        class="glass px-6 py-3.5 rounded-xl font-semibold text-sm hover:border-blue-500 transition">
+                        <i class="fa-solid fa-file-arrow-down mr-2 text-blue-400"></i>
+                        Download Resume
+                    </a>
+
+                </div>
+
+                <!-- Social -->
+
+                <div class="flex gap-4 mt-8">
+
+                    <a href="https://github.com/shivkumarpaswan" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub Profile"
+                        class="w-11 h-11 glass rounded-xl flex items-center justify-center hover:text-blue-400 transition">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/shiv-kumar-838b83321/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn Profile"
+                        class="w-11 h-11 glass rounded-xl flex items-center justify-center hover:text-blue-400 transition">
+
+                        <i class="fa-brands fa-linkedin-in"></i>
+
+                    </a>
+
+                    <a href="mailto:shivkumartech95@gmail.com"
+                        aria-label="Email"
+                        class="w-11 h-11 glass rounded-xl flex items-center justify-center hover:text-blue-400 transition">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right -->
+
+            <div class="lg:col-span-5 flex justify-center reveal">
+
+                <div class="relative max-w-full">
+
+                    <!-- Profile -->
+
+                    <div class="profile-wrapper floating w-64 h-80 sm:w-72 sm:h-96">
+
+                        <div class="relative w-full h-full rounded-[2rem] overflow-hidden glass p-2">
+
+                            <img src="profile.jpeg" alt="Shiv Kumar"
+                                class="w-full h-full object-cover rounded-[1.6rem]">
+
+                            <div
+                                class="absolute inset-2 rounded-[1.6rem] bg-gradient-to-t from-[#050816] via-transparent to-transparent">
+                            </div>
+
+                            <div class="absolute bottom-7 left-7">
+
+                                <p class="font-bold text-lg">
+                                    Shiv Kumar
+                                </p>
+
+                                <p class="text-xs text-blue-300 mt-1">
+                                    Full Stack Developer
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Floating Status -->
+
+                    <div class="absolute -right-4 sm:-right-8 top-10 glass rounded-2xl px-4 py-3 hidden sm:block">
+
+                        <p class="text-[10px] text-slate-500 uppercase">
+                            Status
+                        </p>
+
+                        <p class="text-xs text-green-400 mt-1">
+                            ● Building
+                        </p>
+
+                    </div>
+
+
+                    <div class="absolute -left-4 sm:-left-10 bottom-12 glass rounded-2xl px-4 py-3 hidden sm:block">
+
+                        <p class="text-[10px] text-slate-500 uppercase">
+                            Stack
+                        </p>
+
+                        <p class="text-xs text-blue-300 mt-1">
+                            MERN
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         STATS
+    ========================================== -->
+
+    <section class="py-16 px-5">
+
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+
+            <div class="glass rounded-2xl p-6 text-center reveal">
+                <div class="text-3xl font-bold electric counter" data-target="5">
+                    0
+                </div>
+                <p class="text-xs text-slate-500 mt-2">
+                    Featured Projects
+                </p>
+            </div>
+
+            <div class="glass rounded-2xl p-6 text-center reveal">
+                <div class="text-3xl font-bold electric counter" data-target="2">
+                    0
+                </div>
+                <p class="text-xs text-slate-500 mt-2">
+                    Internships
+                </p>
+            </div>
+
+            <div class="glass rounded-2xl p-6 text-center reveal">
+                <div class="text-3xl font-bold electric counter" data-target="10">
+                    0
+                </div>
+                <p class="text-xs text-slate-500 mt-2">
+                    Technologies
+                </p>
+            </div>
+
+            <div class="glass rounded-2xl p-6 text-center reveal">
+                <div class="text-3xl font-bold electric">
+                    ∞
+                </div>
+                <p class="text-xs text-slate-500 mt-2">
+                    Curiosity
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ABOUT
+    ========================================== -->
+
+    <section id="about" class="section-padding py-24 px-5">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="mb-14 reveal">
+
+                <p class="text-blue-400 font-mono text-xs mb-3">
+                    01 / ABOUT
+                </p>
+
+                <h2 class="heading text-4xl sm:text-5xl font-bold">
+                    Behind the <span class="electric">Code</span>
+                </h2>
+
+            </div>
+
+
+            <div class="grid lg:grid-cols-3 gap-6">
+
+                <!-- About -->
+
+                <div class="lg:col-span-2 glass rounded-3xl p-8 sm:p-10 reveal">
+
+                    <div class="flex items-center gap-4 mb-6">
+
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
+
+                            <i class="fa-solid fa-user-astronaut"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3 class="text-xl font-bold">
+                                Software Engineering Student
+                            </h3>
+
+                            <p class="text-xs text-slate-500">
+                                Quantum University · 2023–2027
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <p class="text-slate-400 leading-8 text-sm">
+
+                        I am a B.Tech Computer Science student at
+                        Quantum University, Roorkee, passionate about
+                        software engineering and full-stack development.
+
+                        I work mainly with JavaScript, React.js,
+                        Node.js, Express.js and MongoDB to create
+                        practical web applications.
+
+                    </p>
+
+                    <p class="text-slate-400 leading-8 text-sm mt-5">
+
+                        My focus is continuously improving my development
+                        skills, understanding real-world software systems
+                        and preparing myself for a professional software
+                        engineering career.
+
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-slate-800">
+
+                        <div>
+                            <p class="text-xs text-slate-500">
+                                Degree
+                            </p>
+                            <p class="text-sm font-semibold mt-1">
+                                B.Tech CSE
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-slate-500">
+                                University
+                            </p>
+                            <p class="text-sm font-semibold mt-1">
+                                Quantum University
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-slate-500">
+                                Location
+                            </p>
+                            <p class="text-sm font-semibold mt-1">
+                                India
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-slate-500">
+                                Focus
+                            </p>
+                            <p class="text-sm font-semibold mt-1">
+                                Full Stack
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Terminal -->
+
+                <div class="glass rounded-3xl overflow-hidden reveal">
+
+                    <div class="px-5 py-4 border-b border-slate-800 flex items-center gap-2">
+
+                        <span class="terminal-dot bg-red-400"></span>
+                        <span class="terminal-dot bg-yellow-400"></span>
+                        <span class="terminal-dot bg-green-400"></span>
+
+                        <span class="text-[10px] text-slate-500 ml-2">
+                            shiv@portfolio
+                        </span>
+
+                    </div>
+
+                    <div class="p-6 font-mono text-xs leading-7 text-slate-400">
+
+                        <p>
+                            <span class="text-green-400">
+                                shiv@portfolio
+                            </span>:$ whoami
+                        </p>
+
+                        <p class="text-blue-400">
+                            Software Engineer
+                        </p>
+
+                        <p class="mt-3">
+                            <span class="text-green-400">
+                                shiv@portfolio
+                            </span>:$ location
+                        </p>
+
+                        <p class="text-slate-300">
+                            India
+                        </p>
+
+                        <p class="mt-3">
+                            <span class="text-green-400">
+                                shiv@portfolio
+                            </span>:$ stack
+                        </p>
+
+                        <p class="text-blue-300">
+                            MERN + Java
+                        </p>
+
+                        <p class="mt-3">
+                            <span class="text-green-400">
+                                shiv@portfolio
+                            </span>:$ mission
+                        </p>
+
+                        <p class="text-slate-300">
+                            Build. Learn. Improve.
+                        </p>
+
+                        <p class="mt-3">
+                            <span class="text-green-400">
+                                shiv@portfolio
+                            </span>:$ _
+                            <span class="animate-pulse">▋</span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SKILLS
+    ========================================== -->
+
+    <section id="skills" class="py-24 px-5">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="text-center mb-14 reveal">
+
+                <p class="text-blue-400 font-mono text-xs mb-3">
+                    02 / SKILLS
+                </p>
+
+                <h2 class="heading text-4xl sm:text-5xl font-bold">
+                    Technical <span class="electric">Arsenal</span>
+                </h2>
+
+                <p class="text-slate-500 text-sm mt-4">
+                    Technologies I use to turn ideas into applications.
+                </p>
+
+            </div>
+
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+                <!-- Frontend -->
+
+                <div class="glass rounded-3xl p-7 reveal">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-5">
+
+                        <i class="fa-solid fa-code"></i>
+
+                    </div>
+
+                    <h3 class="font-bold text-lg mb-5">
+                        Frontend
+                    </h3>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            HTML5
+                        </span>
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            CSS3
+                        </span>
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            JavaScript
+                        </span>
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            React.js
+                        </span>
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            Tailwind CSS
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Backend -->
+
+                <div class="glass rounded-3xl p-7 reveal">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-5">
+
+                        <i class="fa-solid fa-server"></i>
+
+                    </div>
+
+                    <h3 class="font-bold text-lg mb-5">
+                        Backend
+                    </h3>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            Node.js
+                        </span>
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            Express.js
+                        </span>
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            REST API
+                        </span>
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            JWT
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Database -->
+
+                <div class="glass rounded-3xl p-7 reveal">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-5">
+
+                        <i class="fa-solid fa-database"></i>
+
+                    </div>
+
+                    <h3 class="font-bold text-lg mb-5">
+                        Database
+                    </h3>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            MongoDB
+                        </span>
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            Mongoose
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Tools -->
+
+                <div class="glass rounded-3xl p-7 reveal">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center mb-5">
+
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                    </div>
+
+                    <h3 class="font-bold text-lg mb-5">
+                        Tools
+                    </h3>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            Git
+                        </span>
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            GitHub
+                        </span>
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            VS Code
+                        </span>
+
+                        <span class="skill-pill px-3 py-2 rounded-lg border border-slate-800 text-xs">
+                            Postman
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 PROGRAMMING LANGUAGES (JAVA ADDED)
+            ========================================== -->
+
+            <div class="mt-8">
+
+                <div class="glass rounded-3xl p-7 sm:p-8 reveal border border-blue-500/20">
+
+                    <div class="flex items-center gap-4 mb-6">
+
+                        <div
+                            class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center">
+
+                            <i class="fa-solid fa-terminal"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3 class="font-bold text-lg">
+                                Programming Languages
+                            </h3>
+
+                            <p class="text-xs text-slate-500 mt-1">
+                                Core languages I code with
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+
+                        <span class="skill-pill px-4 py-2.5 rounded-xl border border-orange-500/30 bg-orange-500/5 text-xs text-orange-300">
+                            <i class="fa-brands fa-java mr-2"></i>Java
+                        </span>
+
+                        <span class="skill-pill px-4 py-2.5 rounded-xl border border-slate-800 text-xs">
+                            <i class="fa-brands fa-js mr-2 text-yellow-400"></i>JavaScript
+                        </span>
+
+                        <!-- <span class="skill-pill px-4 py-2.5 rounded-xl border border-slate-800 text-xs">
+                            <i class="fa-solid fa-c mr-2 text-blue-400"></i>C
+                        </span> -->
+
+                        <span class="skill-pill px-4 py-2.5 rounded-xl border border-slate-800 text-xs">
+                            <i class="fa-solid fa-code mr-2 text-cyan-400"></i>OOP Concepts
+                        </span>
+
+                        <span class="skill-pill px-4 py-2.5 rounded-xl border border-slate-800 text-xs">
+                            <i class="fa-solid fa-diagram-project mr-2 text-indigo-400"></i>DSA Basics
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CURRENTLY BUILDING
+    ========================================== -->
+
+    <section class="py-20 px-5">
+
+        <div class="max-w-5xl mx-auto">
+
+            <div class="glass rounded-3xl p-8 sm:p-10 border border-blue-500/20 reveal">
+
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+
+                    <div
+                        class="w-20 h-20 shrink-0 rounded-2xl bg-blue-500/10 flex items-center justify-center text-3xl text-blue-400">
+
+                        <i class="fa-solid fa-microphone-lines"></i>
+
+                    </div>
+
+                    <div class="flex-1">
+
+                        <div class="flex items-center gap-3 mb-2">
+
+                            <span class="text-[10px] uppercase tracking-widest text-blue-400 font-bold">
+                                Currently Building
+                            </span>
+
+                            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse">
+                            </span>
+
+                        </div>
+
+                        <h3 class="heading text-2xl font-bold">
+                            Personal Voice AI Assistant
+                        </h3>
+
+                        <p class="text-slate-400 text-sm leading-7 mt-3">
+
+                            A personal AI assistant designed to understand
+                            text and voice questions and provide intelligent
+                            responses through a modern web interface.
+
+                        </p>
+
+                    </div>
+
+                    <div class="font-mono text-xs text-blue-400">
+                        IN_PROGRESS
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         EXPERIENCE
+    ========================================== -->
+
+    <section id="experience" class="py-24 px-5">
+
+        <div class="max-w-5xl mx-auto">
+
+            <div class="mb-14 reveal">
+
+                <p class="text-blue-400 font-mono text-xs mb-3">
+                    03 / EXPERIENCE
+                </p>
+
+                <h2 class="heading text-4xl sm:text-5xl font-bold">
+                    Professional <span class="electric">Journey</span>
+                </h2>
+
+            </div>
+
+            <!-- Cognifyz IT Solutions -->
+            <div class="glass rounded-3xl p-8 sm:p-10 reveal border-l-2 border-blue-500 mb-8">
+
+                <div class="flex flex-col md:flex-row md:justify-between gap-5">
+
+                    <div>
+
+                        <p class="text-blue-400 text-xs font-mono mb-2">
+                            MERN STACK DEVELOPER INTERN
+                        </p>
+
+                        <h3 class="heading text-2xl font-bold">
+                            Cognifyz IT Solutions
+                        </h3>
+
+                        <p class="text-slate-500 text-sm mt-1">
+                            Remote · MERN Stack Development
+                        </p>
+
+                    </div>
+
+                    <span
+                        class="self-start px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300">
+                        Aug 2026 – Sep 2026
+                    </span>
+
+                </div>
+
+
+                <div class="mt-8 grid sm:grid-cols-3 gap-5">
+
+                    <!-- MERN -->
+                    <div class="rounded-2xl border border-slate-800 p-5">
+
+                        <i class="fa-solid fa-layer-group text-blue-400 mb-4"></i>
+
+                        <h4 class="font-semibold text-sm">
+                            Full-Stack Development
+                        </h4>
+
+                        <p class="text-xs text-slate-500 mt-2 leading-6">
+                            Engineered full-stack web applications using
+                            MongoDB, Express.js, React.js and Node.js.
+                        </p>
+
+                    </div>
+
+
+                    <!-- React -->
+                    <div class="rounded-2xl border border-slate-800 p-5">
+
+                        <i class="fa-solid fa-code text-blue-400 mb-4"></i>
+
+                        <h4 class="font-semibold text-sm">
+                            React Development
+                        </h4>
+
+                        <p class="text-xs text-slate-500 mt-2 leading-6">
+                            Built responsive and dynamic interfaces using
+                            React.js with efficient component management.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Backend -->
+                    <div class="rounded-2xl border border-slate-800 p-5">
+
+                        <i class="fa-solid fa-server text-blue-400 mb-4"></i>
+
+                        <h4 class="font-semibold text-sm">
+                            REST APIs & MongoDB
+                        </h4>
+
+                        <p class="text-xs text-slate-500 mt-2 leading-6">
+                            Developed RESTful APIs with Node.js and
+                            Express.js and integrated MongoDB for CRUD operations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Documents -->
+                <div class="mt-7 flex flex-wrap gap-3">
+
+                    <a href="documents/cognifyz-offer-letter.pdf" target="_blank" rel="noopener noreferrer"
+                        class="px-4 py-2 rounded-xl border border-blue-500/30
+                        bg-blue-500/10 text-blue-300 text-xs
+                        hover:bg-blue-500/20 transition">
+
+                        <i class="fa-solid fa-file-contract mr-2"></i>
+                        Offer Letter
+                    </a>
+
+                    <a href="documents/cognifyz-certificate.pdf" target="_blank" rel="noopener noreferrer"
+                        class="px-4 py-2 rounded-xl border border-blue-500/30
+                        bg-blue-500/10 text-blue-300 text-xs
+                        hover:bg-blue-500/20 transition">
+
+                        <i class="fa-solid fa-certificate mr-2"></i>
+                        Internship Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="glass rounded-3xl p-8 sm:p-10 reveal border-l-2 border-blue-500">
+
+                <div class="flex flex-col md:flex-row md:justify-between gap-5">
+
+                    <div>
+
+                        <p class="text-blue-400 text-xs font-mono mb-2">
+                            WEB DEVELOPMENT INTERN
+                        </p>
+
+                        <h3 class="heading text-2xl font-bold">
+                            Oasis Infobyte
+                        </h3>
+
+                        <p class="text-slate-500 text-sm mt-1">
+                            Remote · Web Development
+                        </p>
+
+                    </div>
+
+                    <span
+                        class="self-start px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300">
+                        Jul 2025 – Aug 2025
+                    </span>
+
+                </div>
+
+
+                <div class="mt-8 grid sm:grid-cols-3 gap-5">
+
+                    <div class="rounded-2xl border border-slate-800 p-5">
+
+                        <i class="fa-solid fa-layer-group text-blue-400 mb-4"></i>
+
+                        <h4 class="font-semibold text-sm">
+                            MERN Development
+                        </h4>
+
+                        <p class="text-xs text-slate-500 mt-2 leading-6">
+                            Worked with MongoDB, Express.js, React.js
+                            and Node.js.
+                        </p>
+
+                    </div>
+
+
+                    <div class="rounded-2xl border border-slate-800 p-5">
+
+                        <i class="fa-solid fa-code text-blue-400 mb-4"></i>
+
+                        <h4 class="font-semibold text-sm">
+                            Web Applications
+                        </h4>
+
+                        <p class="text-xs text-slate-500 mt-2 leading-6">
+                            Developed and improved responsive
+                            web application features.
+                        </p>
+
+                    </div>
+
+
+                    <div class="rounded-2xl border border-slate-800 p-5">
+
+                        <i class="fa-solid fa-users text-blue-400 mb-4"></i>
+
+                        <h4 class="font-semibold text-sm">
+                            Development Workflow
+                        </h4>
+
+                        <p class="text-xs text-slate-500 mt-2 leading-6">
+                            Practiced structured development and
+                            real-world project workflows.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Documents -->
+                <div class="mt-7 flex flex-wrap gap-3">
+
+                    <a href="documents/Oasis Infobyte-offer-letter.pdf" target="_blank" rel="noopener noreferrer"
+                        class="px-4 py-2 rounded-xl border border-blue-500/30
+                        bg-blue-500/10 text-blue-300 text-xs
+                        hover:bg-blue-500/20 transition">
+
+                        <i class="fa-solid fa-file-contract mr-2"></i>
+                        Offer Letter
+                    </a>
+
+                    <a href="documents/Oasis Infobyte-certificate.pdf" target="_blank" rel="noopener noreferrer"
+                        class="px-4 py-2 rounded-xl border border-blue-500/30
+                        bg-blue-500/10 text-blue-300 text-xs
+                        hover:bg-blue-500/20 transition">
+
+                        <i class="fa-solid fa-certificate mr-2"></i>
+                        Internship Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PROJECTS
+    ========================================== -->
+
+    <section id="projects" class="py-24 px-5">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="text-center mb-16 reveal">
+
+                <p class="text-blue-400 font-mono text-xs mb-3">
+                    04 / PROJECTS
+                </p>
+
+                <h2 class="heading text-4xl sm:text-5xl font-bold">
+                    Things I've
+                    <span class="electric">Built</span>
+                </h2>
+
+                <p class="text-slate-500 text-sm mt-4">
+                    Explore the systems, interfaces and experiments
+                    I've worked on.
+                </p>
+
+            </div>
+
+
+            <div class="grid md:grid-cols-2 gap-7">
+
+
+                <!-- PROJECT 1 — OLD BOOK STORE -->
+
+                <article class="project-card glass rounded-3xl p-6 sm:p-7 reveal">
+
+                    <div class="project-visual book-theme">
+
+                        <div class="book-page"></div>
+
+                        <div class="book-cover"></div>
+
+                        <div class="absolute bottom-4 left-5 text-[10px] font-mono text-yellow-200/70">
+                            SCANNING BOOK DATABASE...
+                        </div>
+
+                        <div class="absolute top-4 right-5 text-yellow-200/70 text-xs font-mono">
+                            BOOK_STORE.exe
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex justify-between items-start">
+
+                        <div>
+
+                            <p class="text-yellow-500 text-[10px] font-mono">
+                                FULL STACK / E-COMMERCE
+                            </p>
+
+                            <h3 class="heading text-2xl font-bold mt-2">
+                                Old Book Store
+                            </h3>
+
+                        </div>
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center">
+
+                            <i class="fa-solid fa-book-open"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="text-slate-400 text-sm leading-7 mt-4">
+
+                        A second-hand book marketplace where users can
+                        discover, buy and sell books and study materials.
+
+                    </p>
+
+
+                    <div class="flex flex-wrap gap-2 mt-5">
+
+                        <span class="text-xs text-yellow-300">React</span>
+                        <span class="text-xs text-yellow-300">Node.js</span>
+                        <span class="text-xs text-yellow-300">Express</span>
+                        <span class="text-xs text-yellow-300">MongoDB</span>
+                        <span class="text-xs text-yellow-300">JWT</span>
+
+                    </div>
+
+
+                    <div class="flex justify-between items-center mt-7 pt-5 border-t border-slate-800">
+
+                        <span class="text-[10px] font-mono text-slate-500">
+                            STATUS: BUILDING
+                        </span>
+
+                        <a href="https://github.com/Shiv-Kumar-p" target="_blank" rel="noopener noreferrer"
+                            class="text-xs font-bold text-yellow-400">
+
+                            GitHub
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 2 — AI RESUME -->
+
+                <article class="project-card glass rounded-3xl p-6 sm:p-7 reveal">
+
+                    <div class="project-visual resume-theme">
+
+                        <div class="scan-line"></div>
+
+                        <div class="ai-circle"></div>
+
+                        <div class="resume-document"></div>
+
+                        <div class="absolute bottom-4 left-5 text-[10px] font-mono text-blue-300/80">
+
+                            AI ANALYZING RESUME...
+
+                        </div>
+
+                        <div class="absolute top-4 right-5 text-blue-300/70 text-xs font-mono">
+
+                            ATS_AI
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex justify-between items-start">
+
+                        <div>
+
+                            <p class="text-blue-400 text-[10px] font-mono">
+                                AI / FULL STACK
+                            </p>
+
+                            <h3 class="heading text-2xl font-bold mt-2">
+                                AI Resume Analyzer
+                            </h3>
+
+                        </div>
+
+                        <div class="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
+
+                            <i class="fa-solid fa-brain"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="text-slate-400 text-sm leading-7 mt-4">
+
+                        AI-powered resume analysis system that extracts
+                        information from PDF resumes and provides skill
+                        analysis and ATS-oriented feedback.
+
+                    </p>
+
+
+                    <div class="flex flex-wrap gap-2 mt-5">
+
+                        <span class="text-xs text-blue-300">React</span>
+                        <span class="text-xs text-blue-300">Node.js</span>
+                        <span class="text-xs text-blue-300">Gemini API</span>
+                        <span class="text-xs text-blue-300">PDF</span>
+
+                    </div>
+
+
+                    <div class="flex justify-between items-center mt-7 pt-5 border-t border-slate-800">
+
+                        <span class="text-[10px] font-mono text-slate-500">
+                            AI STATUS: ACTIVE
+                        </span>
+
+                        <a href="https://github.com/Shiv-Kumar-p" target="_blank" rel="noopener noreferrer"
+                            class="text-xs font-bold text-blue-400">
+
+                            GitHub
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 3 — PLACEMENT -->
+
+                <article class="project-card glass rounded-3xl p-6 sm:p-7 reveal">
+
+                    <div class="project-visual placement-theme">
+
+                        <div class="dashboard-ui">
+
+                            <div class="dashboard-top"></div>
+
+                            <div class="dashboard-bars">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="absolute bottom-4 left-5 text-[10px] font-mono text-cyan-300/80">
+
+                            LIVE PLACEMENT DATA
+
+                        </div>
+
+                        <div class="absolute top-4 right-5 text-cyan-300/70 text-xs font-mono">
+
+                            PLACEMENT_DB
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex justify-between items-start">
+
+                        <div>
+
+                            <p class="text-cyan-400 text-[10px] font-mono">
+                                FULL STACK / MANAGEMENT
+                            </p>
+
+                            <h3 class="heading text-2xl font-bold mt-2">
+                                Student Placement Management
+                            </h3>
+
+                        </div>
+
+                        <div class="w-11 h-11 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+
+                            <i class="fa-solid fa-user-graduate"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="text-slate-400 text-sm leading-7 mt-4">
+
+                        A placement management platform for handling
+                        student data, authentication, roles and
+                        placement-related information.
+
+                    </p>
+
+
+                    <div class="flex flex-wrap gap-2 mt-5">
+
+                        <span class="text-xs text-cyan-300">Node.js</span>
+                        <span class="text-xs text-cyan-300">Express</span>
+                        <span class="text-xs text-cyan-300">MongoDB</span>
+                        <span class="text-xs text-cyan-300">JWT</span>
+
+                    </div>
+
+
+                    <div class="flex justify-between items-center mt-7 pt-5 border-t border-slate-800">
+
+                        <span class="text-[10px] font-mono text-slate-500">
+                            API: ONLINE
+                        </span>
+
+                        <a href="https://github.com/Shiv-Kumar-p" target="_blank" rel="noopener noreferrer"
+                            class="text-xs font-bold text-cyan-400">
+
+                            GitHub
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 4 — LOST & FOUND -->
+
+                <article class="project-card glass rounded-3xl p-6 sm:p-7 reveal">
+
+                    <div class="project-visual lost-theme">
+
+                        <div class="radar"></div>
+
+                        <div class="location-dot location-one"></div>
+
+                        <div class="location-dot location-two"></div>
+
+                        <div class="absolute bottom-4 left-5 text-[10px] font-mono text-violet-300/80">
+
+                            SEARCHING NEARBY ITEMS...
+
+                        </div>
+
+                        <div class="absolute top-4 right-5 text-violet-300/70 text-xs font-mono">
+
+                            LOST_FOUND_RADAR
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex justify-between items-start">
+
+                        <div>
+
+                            <p class="text-violet-400 text-[10px] font-mono">
+                                CAMPUS TECH
+                            </p>
+
+                            <h3 class="heading text-2xl font-bold mt-2">
+                                Lost & Found Web
+                            </h3>
+
+                        </div>
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center">
+
+                            <i class="fa-solid fa-location-crosshairs"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="text-slate-400 text-sm leading-7 mt-4">
+
+                        Campus-focused platform designed to help students
+                        report, search and recover lost items.
+
+                    </p>
+
+
+                    <div class="flex flex-wrap gap-2 mt-5">
+
+                        <span class="text-xs text-violet-300">HTML</span>
+                        <span class="text-xs text-violet-300">CSS</span>
+                        <span class="text-xs text-violet-300">JavaScript</span>
+                        <span class="text-xs text-violet-300">Firebase</span>
+
+                    </div>
+
+
+                    <div class="flex justify-between items-center mt-7 pt-5 border-t border-slate-800">
+
+                        <span class="text-[10px] font-mono text-slate-500">
+                            RADAR: SEARCHING
+                        </span>
+
+                        <a href="https://github.com/Shiv-Kumar-p" target="_blank" rel="noopener noreferrer"
+                            class="text-xs font-bold text-violet-400">
+
+                            GitHub
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 5 — VOICE AI -->
+
+                <article class="project-card glass rounded-3xl p-6 sm:p-7 reveal md:col-span-2">
+
+                    <div class="project-visual voice-theme">
+
+                        <div class="waveform">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <div class="absolute bottom-4 left-5 text-[10px] font-mono text-blue-300/80">
+
+                            LISTENING FOR COMMAND...
+
+                        </div>
+
+                        <div class="absolute top-4 right-5 text-blue-300/70 text-xs font-mono">
+
+                            VOICE_AI
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex flex-col md:flex-row justify-between gap-6">
+
+                        <div>
+
+                            <div class="flex items-center gap-3">
+
+                                <p class="text-blue-400 text-[10px] font-mono">
+                                    AI / PERSONAL ASSISTANT
+                                </p>
+
+                                <span
+                                    class="text-[9px] px-2 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
+
+                                    IN PROGRESS
+
+                                </span>
+
+                            </div>
+
+                            <h3 class="heading text-2xl font-bold mt-2">
+                                Personal Voice AI Assistant
+                            </h3>
+
+                            <p class="text-slate-400 text-sm leading-7 mt-4 max-w-3xl">
+
+                                A personal AI assistant designed to understand
+                                text and voice questions and provide intelligent
+                                answers through a modern web interface.
+
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="w-14 h-14 shrink-0 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl">
+
+                            <i class="fa-solid fa-microphone-lines"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex flex-wrap gap-5 mt-6 pt-5 border-t border-slate-800">
+
+                        <span class="text-xs text-blue-300">React</span>
+                        <span class="text-xs text-blue-300">Node.js</span>
+                        <span class="text-xs text-blue-300">AI API</span>
+                        <span class="text-xs text-blue-300">Web Speech</span>
+                        <span class="text-xs text-blue-300">Camera Input</span>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CAREER TIMELINE
+    ========================================== -->
+
+    <section class="py-24 px-5">
+
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-14 reveal">
+
+                <p class="text-blue-400 font-mono text-xs mb-3">
+                    JOURNEY
+                </p>
+
+                <h2 class="heading text-4xl font-bold">
+                    My <span class="electric">Timeline</span>
+                </h2>
+
+            </div>
+
+
+            <div class="relative pl-12">
+
+                <div class="timeline-line"></div>
+
+
+                <!-- 2023 -->
+
+                <div class="relative mb-12 reveal">
+
+                    <div
+                        class="absolute -left-[35px] top-1 w-5 h-5 rounded-full bg-blue-500 border-4 border-[#050816] shadow-lg shadow-blue-500/50">
+                    </div>
+
+                    <p class="text-blue-400 text-xs font-mono">
+                        2023
+                    </p>
+
+                    <h3 class="heading text-xl font-bold mt-2">
+                        Started B.Tech CSE
+                    </h3>
+
+                    <p class="text-sm text-slate-500 mt-2">
+                        Began computer science journey at Quantum University.
+                    </p>
+
+                </div>
+
+
+                <!-- 2025 -->
+
+                <div class="relative mb-12 reveal">
+
+                    <div class="absolute -left-[35px] top-1 w-5 h-5 rounded-full bg-blue-500 border-4 border-[#050816]">
+                    </div>
+
+                    <p class="text-blue-400 text-xs font-mono">
+                        2025
+                    </p>
+
+                    <h3 class="heading text-xl font-bold mt-2">
+                        Web Development Internship
+                    </h3>
+
+                    <p class="text-sm text-slate-500 mt-2">
+                        Gained practical experience working with MERN
+                        technologies at Oasis Infobyte.
+                    </p>
+
+                </div>
+
+
+                <!-- 2026 -->
+
+                <div class="relative mb-12 reveal">
+
+                    <div class="absolute -left-[35px] top-1 w-5 h-5 rounded-full bg-blue-500 border-4 border-[#050816]">
+                    </div>
+
+                    <p class="text-blue-400 text-xs font-mono">
+                        2026
+                    </p>
+
+                    <h3 class="heading text-xl font-bold mt-2">
+                        AI & Full Stack Focus
+                    </h3>
+
+                    <p class="text-sm text-slate-500 mt-2">
+                        Building AI-powered and full-stack applications
+                        while preparing for software engineering roles.
+                    </p>
+
+                </div>
+
+
+                <!-- Future -->
+
+                <div class="relative reveal">
+
+                    <div
+                        class="absolute -left-[35px] top-1 w-5 h-5 rounded-full bg-indigo-500 border-4 border-[#050816]">
+                    </div>
+
+                    <p class="text-indigo-400 text-xs font-mono">
+                        2027
+                    </p>
+
+                    <h3 class="heading text-xl font-bold mt-2">
+                        Software Engineer
+                    </h3>
+
+                    <p class="text-sm text-slate-500 mt-2">
+                        Goal: start a professional software engineering
+                        career and continue building impactful products.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         EDUCATION
+    ========================================== -->
+
+    <section id="education" class="py-24 px-5">
+
+        <div class="max-w-6xl mx-auto">
+
+            <div class="text-center mb-14 reveal">
+
+                <p class="text-blue-400 font-mono text-xs mb-3">
+                    05 / EDUCATION
+                </p>
+
+                <h2 class="heading text-4xl sm:text-5xl font-bold">
+                    Academic <span class="electric">Background</span>
+                </h2>
+
+            </div>
+
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+
+                <div class="glass rounded-3xl p-8 reveal">
+
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                    </div>
+
+                    <p class="text-blue-400 text-xs font-mono mt-6">
+                        2023 — 2027
+                    </p>
+
+                    <h3 class="heading text-xl font-bold mt-2">
+                        B.Tech Computer Science & Engineering
+                    </h3>
+
+                    <p class="text-sm text-slate-400 mt-2">
+                        Quantum University, Roorkee
+                    </p>
+
+                    <div class="mt-6 pt-5 border-t border-slate-800 flex justify-between">
+
+                        <span class="text-xs text-slate-500">
+                            Current CGPA
+                        </span>
+
+                        <span class="text-sm font-bold text-blue-400">
+                            7.0 / 10
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="glass rounded-3xl p-8 reveal">
+
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl">
+
+                        <i class="fa-solid fa-school"></i>
+
+                    </div>
+
+                    <p class="text-indigo-400 text-xs font-mono mt-6">
+                        2022 — 2023
+                    </p>
+
+                    <h3 class="heading text-xl font-bold mt-2">
+                        Class XII
+                    </h3>
+
+                    <p class="text-sm text-slate-400 mt-2">
+                        J P K I College Of Competence,
+                        Bhandaro, Giridih
+                    </p>
+
+                    <div class="mt-6 pt-5 border-t border-slate-800 flex justify-between">
+
+                        <span class="text-xs text-slate-500">
+                            Score
+                        </span>
+
+                        <span class="text-sm font-bold text-indigo-400">
+                            77.89%
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CONTACT
+    ========================================== -->
+
+    <section id="contact" class="py-24 px-5">
+
+        <div class="max-w-5xl mx-auto">
+
+            <div class="glass rounded-[2rem] p-8 sm:p-14 text-center relative overflow-hidden reveal">
+
+                <div class="absolute w-72 h-72 bg-blue-600/10 blur-[100px] rounded-full -top-40 -right-20">
+                </div>
+
+                <p class="text-blue-400 text-xs font-mono mb-4">
+                    06 / CONTACT
+                </p>
+
+                <h2 class="heading text-4xl sm:text-5xl font-bold relative">
+
+                    Let's Build Something
+                    <span class="electric">
+                        Great
+                    </span>
+
+                </h2>
+
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm leading-7 mt-5">
+
+                    Looking for software engineering opportunities,
+                    internships and interesting projects.
+                    Let's connect and build something meaningful.
+
+                </p>
+
+
+                <div class="flex flex-wrap justify-center gap-4 mt-9">
+
+                    <a href="mailto:shivkumartech95@gmail.com"
+                        class="btn-primary px-6 py-3.5 rounded-xl text-sm font-semibold">
+
+                        <i class="fa-solid fa-envelope mr-2"></i>
+                        Email Me
+
+                    </a>
+
+                    <a href="tel:+916299771369" class="glass px-6 py-3.5 rounded-xl text-sm font-semibold">
+
+                        <i class="fa-solid fa-phone text-blue-400 mr-2"></i>
+                        Call Me
+
+                    </a>
+
+                    <a href="resume.pdf" download class="glass px-6 py-3.5 rounded-xl text-sm font-semibold">
+
+                        <i class="fa-solid fa-file-pdf text-blue-400 mr-2"></i>
+                        Resume
+
+                    </a>
+
+                </div>
+
+
+                <div class="flex justify-center gap-4 mt-8">
+
+                    <a href="https://github.com/Shiv-Kumar-p" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        class="text-slate-500 hover:text-white transition">
+
+                        <i class="fa-brands fa-github text-xl"></i>
+
+                    </a>
+
+                    <a href="https://linkedin.com/in/shiv-kumar-838b83321/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        class="text-slate-500 hover:text-blue-400 transition">
+
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="border-t border-slate-900 py-10 px-5">
+
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-5 items-center">
+
+            <p class="text-xs text-slate-600 font-mono">
+                © 2026 Shiv Kumar. All rights reserved.
+            </p>
+
+            <p class="text-xs text-slate-600 font-mono">
+                Built with
+                <span class="text-blue-400">React mindset</span>
+                & lots of ☕
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+
+
+</body>
+
+</html>
